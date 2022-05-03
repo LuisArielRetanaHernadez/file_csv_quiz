@@ -44,7 +44,6 @@ class FileCsv:
                 file = pd.read_csv(entry)
                 self.all_csv.append(file)
         return self.all_csv
-
 class Student(FileCsv):
 
     list_students = []
@@ -55,7 +54,7 @@ class Student(FileCsv):
     def new_list_student(self) -> None:
         for name in self.all_csv:
            name_not_na = name["Last Name"].fillna("", inplace=False)
-           names_completed = name["First Name"] + name_not_na
+           names_completed = name["First Name"] + name_not_na 
 
            for name_student in names_completed:
                 in_name = name_student not in chain.from_iterable(self.list_students)
